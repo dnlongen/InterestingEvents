@@ -3,7 +3,7 @@ Windows events of interest for logging and detection of compromise. Work in prog
 
 | Event ID | Log | Source | Task Category | Notes |
 | -------- | --- | ------ | ------------- | ----- |
-| 1102 | SECURITY | | | The audit log was cleared. This may indicate an intruder covering their tracks; the event message will specify the domain name and account name. Note that clearing logs other than the audit log will generate an Event ID 104 in the SYSTEM log instead. |
+| 1102 | SECURITY | Eventlog | Log clear | The audit log (aka SYSTEM log) was cleared. This may indicate an intruder covering their tracks; the event message will specify the domain name and account name. Note that clearing logs other than the audit log will generate an Event ID 104 in the SYSTEM log instead. |
 | 4720 | SECURITY | Microsoft-Windows-Security-Auditing |	User Account Management | A user account was created. High confidence on workstations and member servers. Noisy on domain controllers and needs to correlate against expected changes. SubjectDomainName and SubjectAccountName are the privileged user that made the change; TargetDomainName and TargetUserName are the new user |
 | 4722 | SECURITY | Microsoft-Windows-Security-Auditing |	User Account Management | A user account was enabled. High confidence on workstations and member servers. Noisy on domain controllers and needs to correlate against expected changes. If terminated employee accounts are disabled rather than deleted, re-enablement outside of an established process is a high confidence indicator. |
 | 4726 | SECURITY | Microsoft-Windows-Security-Auditing |	User Account Management | A user account was deleted. Could indicate an intruder covering their tracks. |
